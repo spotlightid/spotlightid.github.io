@@ -1,0 +1,345 @@
+/* ===========================================
+   Spotlight ID - Main Stylesheet
+   Version: 1.0
+=========================================== */
+
+:root{
+
+    --primary:#2563eb;
+    --primary-hover:#1d4ed8;
+
+    --background:#f5f7fb;
+    --surface:#ffffff;
+
+    --text:#111827;
+    --text-secondary:#6b7280;
+
+    --border:#e5e7eb;
+
+    --radius:16px;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --max-width:1200px;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--background);
+
+color:var(--text);
+
+font-family:
+"Inter",
+system-ui,
+sans-serif;
+
+line-height:1.8;
+
+}
+
+/* ==========================
+      Container
+========================== */
+
+.container{
+
+width:min(1100px,92%);
+
+margin:auto;
+
+}
+
+/* ==========================
+      Header
+========================== */
+
+header{
+
+background:var(--surface);
+
+box-shadow:0 2px 12px rgba(0,0,0,.06);
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+}
+
+.navbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 0;
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:700;
+
+letter-spacing:-1px;
+
+color:var(--primary);
+
+text-decoration:none;
+
+}
+
+nav{
+
+display:flex;
+
+gap:30px;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:var(--text);
+
+font-weight:500;
+
+transition:.25s;
+
+}
+
+nav a:hover{
+
+color:var(--primary);
+
+}
+
+/* ==========================
+      Hero
+========================== */
+
+.hero{
+
+padding:90px 0;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:56px;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+max-width:700px;
+
+margin:auto;
+
+font-size:19px;
+
+color:var(--text-secondary);
+
+}
+
+/* ==========================
+      Search
+========================== */
+
+.search-box{
+
+margin-top:45px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.search-box input{
+
+width:100%;
+
+max-width:520px;
+
+padding:18px 22px;
+
+font-size:17px;
+
+border-radius:14px;
+
+border:1px solid var(--border);
+
+outline:none;
+
+background:white;
+
+transition:.25s;
+
+}
+
+.search-box input:focus{
+
+border-color:var(--primary);
+
+}
+
+/* ==========================
+      Cards
+========================== */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+}
+
+.card{
+
+background:var(--surface);
+
+padding:25px;
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+transition:.25s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.card h3{
+
+margin-bottom:12px;
+
+font-size:22px;
+
+}
+
+.card p{
+
+color:var(--text-secondary);
+
+}
+
+/* ==========================
+      Buttons
+========================== */
+
+.button{
+
+display:inline-block;
+
+margin-top:18px;
+
+padding:13px 22px;
+
+border-radius:10px;
+
+background:var(--primary);
+
+color:white;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.button:hover{
+
+background:var(--primary-hover);
+
+}
+
+/* ==========================
+      Section
+========================== */
+
+section{
+
+padding:70px 0;
+
+}
+
+.section-title{
+
+font-size:34px;
+
+margin-bottom:30px;
+
+}
+
+/* ==========================
+      Footer
+========================== */
+
+footer{
+
+margin-top:100px;
+
+padding:30px;
+
+text-align:center;
+
+color:var(--text-secondary);
+
+}
+
+/* ==========================
+      Mobile
+========================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero{
+
+padding:60px 0;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+  }
