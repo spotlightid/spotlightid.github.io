@@ -1,40 +1,119 @@
-/* ===========================================
-   Spotlight ID - Main Stylesheet
-   Version: 1.0
-=========================================== */
-
-:root{
-
-    --primary:#2563eb;
-    --primary-hover:#1d4ed8;
-
-    --background:#f5f7fb;
-    --surface:#ffffff;
-
-    --text:#111827;
-    --text-secondary:#6b7280;
-
-    --border:#e5e7eb;
-
-    --radius:16px;
-
-    --shadow:0 10px 30px rgba(0,0,0,.08);
-
-    --max-width:1200px;
-
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#dff6ff, #ffffff);
+    color: #333;
 }
 
-html{
-scroll-behavior:smooth;
+
+/* Navbar */
+
+header {
+    padding: 20px 50px;
 }
 
-body{
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+nav h1 {
+    font-size: 35px;
+    color: #4bb8ff;
+}
+
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+/* Hero */
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+}
+
+
+.hero-text h2 {
+    font-size: 60px;
+    color: #3298db;
+}
+
+
+.hero-text p {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+
+button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    background: #4bb8ff;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Image */
+
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* Section */
+
+section {
+    padding: 60px;
+    text-align: center;
+}
+
+
+.music-card {
+    margin-top: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 20px;
+}body{
 
 background:var(--background);
 
