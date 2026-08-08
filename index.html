@@ -1,154 +1,1158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spotlight ID</title>
 
-<style>
+    <meta charset="UTF-8">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-body{
-background:#f6f6f6;
-color:#222;
-}
+    <title>Spotlight ID — Creator Profiles</title>
 
-header{
-background:white;
-padding:18px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
-position:sticky;
-top:0;
-}
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#0066ff;
-}
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-.hero{
-padding:70px 20px;
-text-align:center;
-background:white;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-.hero h1{
-font-size:40px;
-margin-bottom:15px;
-}
 
-.hero p{
-font-size:18px;
-color:#666;
-margin-bottom:30px;
-}
+    <style>
 
-input{
-width:90%;
-max-width:450px;
-padding:16px;
-font-size:18px;
-border-radius:10px;
-border:1px solid #ddd;
-}
+        /* =========================
+           RESET
+        ========================= */
 
-.section{
-padding:35px 20px;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.section h2{
-margin-bottom:20px;
-}
 
-.card{
-background:white;
-padding:20px;
-border-radius:15px;
-margin-bottom:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.card h3{
-margin-bottom:8px;
-}
 
-button{
-margin-top:15px;
-padding:12px 18px;
-border:none;
-background:#0066ff;
-color:white;
-border-radius:8px;
-cursor:pointer;
-}
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f7fbff;
+            color: #172033;
+            overflow-x: hidden;
+        }
 
-footer{
-padding:30px;
-text-align:center;
-color:#666;
-}
 
-</style>
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #edf1f5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+
+        .navbar {
+            width: min(1150px, 92%);
+            margin: auto;
+
+            min-height: 76px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: #319fe0;
+            letter-spacing: -1px;
+        }
+
+
+        .logo span {
+            color: #172033;
+        }
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #667085;
+            transition: 0.25s;
+        }
+
+
+        .nav-links a:hover {
+            color: #319fe0;
+        }
+
+
+        .nav-button {
+            background: #319fe0;
+            color: white !important;
+            padding: 10px 18px;
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+            min-height: 610px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(90,190,255,0.25),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 10% 80%,
+                    rgba(170,225,255,0.25),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #f8fcff,
+                    #eaf7ff
+                );
+        }
+
+
+        .hero-content {
+            width: min(1150px, 92%);
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+
+            align-items: center;
+
+            gap: 60px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+
+        .eyebrow {
+            display: inline-block;
+
+            padding: 8px 14px;
+
+            border-radius: 50px;
+
+            background: white;
+
+            color: #319fe0;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            margin-bottom: 22px;
+
+            box-shadow:
+                0 8px 25px rgba(49,159,224,0.08);
+        }
+
+
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 78px);
+
+            line-height: 1.05;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero h1 span {
+            color: #319fe0;
+        }
+
+
+        .hero-description {
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            color: #667085;
+
+            max-width: 570px;
+
+            margin-bottom: 32px;
+        }
+
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+
+        .primary-button {
+            display: inline-block;
+
+            padding: 14px 23px;
+
+            border-radius: 12px;
+
+            background: #319fe0;
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 10px 25px rgba(49,159,224,0.25);
+
+            transition: 0.25s;
+        }
+
+
+        .primary-button:hover {
+            transform: translateY(-3px);
+        }
+
+
+        .secondary-button {
+            display: inline-block;
+
+            padding: 14px 23px;
+
+            border-radius: 12px;
+
+            background: white;
+
+            color: #172033;
+
+            border: 1px solid #e1e8ef;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: 0.25s;
+        }
+
+
+        .secondary-button:hover {
+            border-color: #319fe0;
+            color: #319fe0;
+        }
+
+
+        /* =========================
+           HERO DECORATION
+        ========================= */
+
+        .hero-visual {
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .visual-circle {
+            width: 360px;
+            height: 360px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #c9efff,
+                    #ffffff
+                );
+
+            box-shadow:
+                0 30px 80px rgba(49,159,224,0.18);
+
+            position: relative;
+        }
+
+
+        .visual-card {
+            position: absolute;
+
+            width: 230px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            box-shadow:
+                0 20px 60px rgba(31,55,75,0.12);
+
+            bottom: 20px;
+            left: 0;
+        }
+
+
+        .visual-card small {
+            color: #98a2b3;
+            font-size: 11px;
+        }
+
+
+        .visual-card h3 {
+            margin-top: 5px;
+            font-size: 18px;
+        }
+
+
+        .visual-card p {
+            margin-top: 5px;
+            color: #667085;
+            font-size: 12px;
+        }
+
+
+        .visual-badge {
+            position: absolute;
+
+            top: 30px;
+            right: 5px;
+
+            background: white;
+
+            padding: 13px 17px;
+
+            border-radius: 14px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 15px 40px rgba(31,55,75,0.12);
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search-section {
+            width: min(900px, 90%);
+
+            margin: -40px auto 0;
+
+            position: relative;
+
+            z-index: 5;
+        }
+
+
+        .search-box {
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 10px;
+
+            display: flex;
+
+            align-items: center;
+
+            box-shadow:
+                0 15px 50px rgba(31,55,75,0.12);
+
+            border: 1px solid #edf1f5;
+        }
+
+
+        .search-box input {
+            flex: 1;
+
+            border: none;
+
+            outline: none;
+
+            padding: 15px;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            background: transparent;
+        }
+
+
+        .search-box button {
+            border: none;
+
+            background: #319fe0;
+
+            color: white;
+
+            padding: 13px 22px;
+
+            border-radius: 11px;
+
+            font-family: inherit;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            width: min(900px, 90%);
+
+            margin: 55px auto 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            background: white;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 35px rgba(31,55,75,0.06);
+
+            overflow: hidden;
+        }
+
+
+        .stat {
+            text-align: center;
+
+            padding: 25px 15px;
+
+            border-right: 1px solid #edf1f5;
+        }
+
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+
+        .stat strong {
+            display: block;
+
+            font-size: 25px;
+
+            color: #319fe0;
+        }
+
+
+        .stat span {
+            font-size: 12px;
+
+            color: #98a2b3;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        .section {
+            width: min(1100px, 92%);
+
+            margin: auto;
+
+            padding: 100px 0;
+        }
+
+
+        .section-heading {
+            margin-bottom: 35px;
+        }
+
+
+        .section-heading span {
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color: #319fe0;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+
+        .section-heading h2 {
+            font-size: 35px;
+
+            margin-top: 8px;
+
+            letter-spacing: -1px;
+        }
+
+
+        .section-heading p {
+            color: #667085;
+
+            margin-top: 8px;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PROFILE CARD
+        ========================= */
+
+        .featured-card {
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 30px;
+
+            display: grid;
+
+            grid-template-columns: 180px 1fr auto;
+
+            align-items: center;
+
+            gap: 30px;
+
+            box-shadow:
+                0 15px 45px rgba(31,55,75,0.08);
+
+            border: 1px solid #edf1f5;
+
+            transition: 0.3s;
+        }
+
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+        }
+
+
+        .profile-placeholder {
+            width: 180px;
+            height: 180px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d9f3ff,
+                    #f3fbff
+                );
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: #319fe0;
+
+            font-size: 40px;
+
+            font-weight: 800;
+        }
+
+
+        .featured-info h3 {
+            font-size: 28px;
+        }
+
+
+        .verified {
+            color: #319fe0;
+            font-size: 15px;
+        }
+
+
+        .featured-info p {
+            color: #667085;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-top: 10px;
+
+            max-width: 500px;
+        }
+
+
+        .tags {
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            margin-top: 15px;
+        }
+
+
+        .tag {
+            background: #edf8ff;
+
+            color: #319fe0;
+
+            padding: 6px 10px;
+
+            border-radius: 8px;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+
+        .view-profile {
+            background: #319fe0;
+
+            color: white;
+
+            padding: 13px 20px;
+
+            border-radius: 11px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================
+           TRENDING
+        ========================= */
+
+        .profile-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .mini-card {
+            background: white;
+
+            border: 1px solid #edf1f5;
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 10px 30px rgba(31,55,75,0.05);
+
+            transition: 0.3s;
+        }
+
+
+        .mini-card:hover {
+            transform: translateY(-5px);
+        }
+
+
+        .mini-avatar {
+            width: 55px;
+            height: 55px;
+
+            border-radius: 50%;
+
+            background: #e5f6ff;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: #319fe0;
+
+            font-weight: 800;
+
+            margin-bottom: 18px;
+        }
+
+
+        .mini-card h3 {
+            font-size: 18px;
+        }
+
+
+        .mini-card p {
+            font-size: 12px;
+
+            color: #667085;
+
+            margin-top: 7px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            width: min(1100px, 92%);
+
+            margin: 20px auto 100px;
+
+            padding: 60px 30px;
+
+            text-align: center;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #319fe0,
+                    #61c7ff
+                );
+
+            color: white;
+
+            box-shadow:
+                0 20px 50px rgba(49,159,224,0.2);
+        }
+
+
+        .cta h2 {
+            font-size: 34px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .cta p {
+            font-size: 14px;
+
+            opacity: 0.9;
+
+            margin-bottom: 25px;
+        }
+
+
+        .cta a {
+            display: inline-block;
+
+            background: white;
+
+            color: #319fe0;
+
+            padding: 13px 22px;
+
+            border-radius: 11px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111827;
+
+            color: #98a2b3;
+
+            padding: 45px 20px;
+
+            text-align: center;
+        }
+
+
+        footer strong {
+            color: white;
+
+            font-size: 18px;
+        }
+
+
+        footer p {
+            margin-top: 8px;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                min-height: 65px;
+            }
+
+
+            .logo {
+                font-size: 23px;
+            }
+
+
+            .nav-links {
+                display: none;
+            }
+
+
+            .hero {
+                min-height: auto;
+
+                padding: 70px 0 90px;
+            }
+
+
+            .hero-content {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                gap: 45px;
+            }
+
+
+            .hero-text {
+                order: 1;
+            }
+
+
+            .hero-visual {
+                order: 2;
+            }
+
+
+            .hero h1 {
+                font-size: 45px;
+
+                letter-spacing: -2px;
+            }
+
+
+            .hero-description {
+                font-size: 14px;
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+
+            .visual-circle {
+                width: 280px;
+                height: 280px;
+            }
+
+
+            .visual-card {
+                width: 180px;
+
+                left: 5px;
+
+                bottom: 0;
+
+                padding: 15px;
+            }
+
+
+            .visual-badge {
+                right: 0;
+
+                top: 10px;
+            }
+
+
+            .search-section {
+                margin-top: -30px;
+            }
+
+
+            .search-box {
+                padding: 8px;
+            }
+
+
+            .search-box input {
+                min-width: 0;
+
+                padding: 12px 10px;
+
+                font-size: 13px;
+            }
+
+
+            .search-box button {
+                padding: 11px 14px;
+            }
+
+
+            .stats {
+                grid-template-columns: 1fr;
+
+                margin-top: 35px;
+            }
+
+
+            .stat {
+                border-right: none;
+
+                border-bottom: 1px solid #edf1f5;
+            }
+
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+
+            .section {
+                padding: 70px 0;
+            }
+
+
+            .section-heading h2 {
+                font-size: 29px;
+            }
+
+
+            .featured-card {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                padding: 25px;
+            }
+
+
+            .profile-placeholder {
+                margin: auto;
+
+                width: 130px;
+                height: 130px;
+            }
+
+
+            .tags {
+                justify-content: center;
+            }
+
+
+            .view-profile {
+                display: inline-block;
+            }
+
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .cta {
+                margin-bottom: 70px;
+
+                padding: 45px 20px;
+            }
+
+
+            .cta h2 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-<header>
 
-<div class="logo">
-Spotlight ID
-</div>
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-</header>
+    <header>
 
-<section class="hero">
+        <div class="navbar">
 
-<h1>Discover Creators</h1>
+            <a href="index.html" class="logo">
+                Spotlight<span>ID</span>
+            </a>
 
-<p>
-Profiles of creators, artists, and public figures.
-</p>
 
-<input placeholder="Search creators...">
+            <ul class="nav-links">
 
-</section>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
 
-<section class="section">
+                <li>
+                    <a href="#featured">
+                        Profiles
+                    </a>
+                </li>
 
-<h2>Featured Profile</h2>
+                <li>
+                    <a href="#trending">
+                        Trending
+                    </a>
+                </li>
 
-<div class="card">
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
 
-<h3>DEE</h3>
+            </ul>
 
-<p>
-TikTok Creator, Story Writer, and Content Creator.
-</p>
+        </div>
 
-<button onclick="window.location.href='dee.html'">
-View Profile
-</button>
+    </header>
 
-</div>
 
-</section>
 
-<footer>
+    <!-- =========================
+         HERO
+    ========================== -->
 
-© 2026 Spotlight ID
+    <main>
 
-</footer>
+        <section class="hero">
 
-</body>
-</html>
+            <div class="hero-content">
+
+
+                <div class="hero-text">
+
+                    <div class="eyebrow">
+                        ✦ CREATOR DIRECTORY
+                    </div>
+
+
+                    <h1>
+                        Discover the
+                        <span>people</span>
+                        worth knowing.
+                    </h1>
+
+
+                    <p class="hero-description">
+                        Spotlight ID is a growing public archive
+                        for creators, artists, storytellers,
+                        and inspiring people.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a href="#featured"
+                           class="primary-button">
+                            Explore Profiles
+                        </a>
+
+
+                        <a href="#trending"
+                           class="secondary-button">
+                            See What's Trending
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="hero-visual">
+
+                    <div class="visual-circle"></div>
+
+
+                    <div class="visual-badge">
+                        ✦ Featured Creator
+                    </div>
+
+
+                    <div class="visual-card">
+
+                        <small>
+                            CURRENT SPOTLIGHT
+                        </small>
+
+                        <h3>
+                            D
